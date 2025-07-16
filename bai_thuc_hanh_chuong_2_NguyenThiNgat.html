@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nguyen Thi Ngat">
+    <title>Bài thực hành chương 2</title>
+</head>
+<body>
+
+    <h2>Thêm sinh viên</h2>
+    <form action="">
+        <label for="msv">Mã sinh viên</label>
+        <input type="text" name="msv" id="msv" required><br><br>
+
+        <label for="fullname">Họ và tên: </label>
+        <input type="text" name="fullname" id="fullname" required><br><br>
+
+        <label for="email">Email: </label>
+        <input type="text" name="email" id="email" required><br><br>
+
+        <lable for="ngaysinh">Ngày sinh: </lable>
+        <input type="date" name="ngaysinh" id="ngaysinh"><br><br>
+
+        <label for="gioitinh">Giới tính: </label>
+        <input type="radio" name="gioitinh" value="Nam"> <label>Nam</label>
+        <input type="radio" name="gioitinh" value="Nu"> <label>Nữ</label>
+        <input type="radio" name="gioitinh" value="Khac"> <label>Khác</label><br><br>
+        
+        <label for="ghichu">Ghi chú</label>
+        <textarea name="ghichu" id="ghichu" cols="25" rows="5"></textarea><br><br>
+
+        <button>Thêm sinh viên</button>
+    </form>
+    <br>
+
+    <h2>Danh sách sinh viên</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã sinh viên</th>
+                <th>Họ và tên</th>
+                <th>Email</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2251162086</td>
+                <td>Nguyễn Thị Ngát</td>
+                <td>nguyenthingat@gmail.com</td>
+                <td>Nữ</td>
+                <td>2004-01-01</td>
+                <th><a href="#">Sửa</a></th>
+                <th><a href="#">Xóa</a></th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2251162085</td>
+                <td>Phạm Hiếu Ngân</td>
+                <td>phamhieungan@gmail.com</td>
+                <td>Nữ</td>
+                <td>2004-02-01</td>
+                <th><a href="#">Sửa</a></th>
+                <th><a href="#">Xóa</a></th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2251162087</td>
+                <td>Ngô Thị Ngọc</td>
+                <td>ngothingoc@gmail.com</td>
+                <td>Nữ</td>
+                <td>2004-05-01</td>
+                <th><a href="#">Sửa</a></th>
+                <th><a href="#">Xóa</a></th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
