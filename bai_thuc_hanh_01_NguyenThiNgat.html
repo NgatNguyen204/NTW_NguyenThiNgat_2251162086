@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Thực hành 01</title>
+</head>
+<body>
+    <h1>Thực hành 01</h2>
+    <h2>Bài tập 3</h2>
+    <table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+      <tr>
+        <th rowspan="2" colspan="2">Student</th>
+        <th colspan="4">Exam</th>
+        <th colspan="4">2nd Exam</th>
+        <th colspan="2" rowspan="2">Final Grade</th>
+      </tr>
+      <tr>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th rowspan="2">Grade</th>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th rowspan="2">Grade</th>
+      </tr>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>8</th>
+        <th>7</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>NR</th>
+        <th>R</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>80549061</td>
+        <td>John</td>
+        <td>70%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>17.6</td>
+        <th colspan="4"></th>
+        <td>17.6</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td>80549062</td>
+        <td>Mary</td>
+        <td>10%</td>
+        <td>50%</td>
+        <td>50%</td>
+        <td>6.8</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>50%</td>
+        <td>16.5</td>
+        <td>16.5</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>80549063</td>
+        <td>Claire</td>
+        <th colspan="4"></th>
+        <td>50%</td>
+        <td>50%</td>
+        <td>50%</td>
+        <td>10.0</td>
+        <td>10.0</td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+  <br><hr><br>
+  <h2>Bài tập 4</h2><br>
+    <h3>Basic Info</h3><hr>
+    <form action="">
+        <table  cellspacing="0" cellpadding="10">
+                <tr>
+                    <th>Employee ID</th>
+                    <td><input type="text" value="9" size="60"></td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td><input type="text" value="Dodsworth" size="60"></td>
+                </tr>
+                <tr>
+                    <th>First Name</th>
+                    <td><input type="text" value="Anne" size="60" ></td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>
+                        <input type="radio" name="gioitinh" value="Male"> <label>Male</label><br>
+                        <input type="radio" name="gioitinh" value="Female"> <label>Female</label><br>
+                        <input type="radio" name="gioitinh" value="XXX"> <label>XXX</label><br>
+                        <input type="radio" name="gioitinh" value="ZZZ"> <label>ZZZ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td><input type="text" value="Sales Representative" size="60"></td>
+                </tr>
+                <tr>
+                    <th>Suffix</th>
+                    <td><input type="text" value="Ms." size="60"></td>
+                </tr>
+                <tr>
+                    <th>BirthDate</th>
+                    <td><input type="text" value="1969-07-02 00:00:00" size="60"> (?)</td>
+                </tr> 
+                <tr>
+                    <th>HireDate</th>
+                    <td><input type="text" value="1994-11-15 00:00:00" size="60"></td>
+                </tr>
+                <tr>
+                    <th>SSN # (if applicable) </th>
+                    <td><input type="text" size="60"></td>
+                </tr>
+                <tr>
+                    <th>Reports To</th>
+                    <td>
+                        <select>
+                            <option value="1">Russian Federation</option>
+                            <option value="2">Jane Doe</option>
+                            <option value="3">Alice Johnson</option>
+                        </select>
+                </tr>
+        </table>
+    </form>
+    <h3>Contact Info</h3><hr>
+    <form action="">
+        <table cellspacing="0" cellpadding="10">
+            <tr>
+                <th width="140">Email</th>
+                <td><input type="text" placeholder="name@examole.com" size="60"></td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td><input type="text" value="7 Houndstooth Rd." size="60"></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td><input type="text" value="London" size="60"></td>
+            </tr>
+            <tr>
+                <th>Regoin</th>
+                <td><input type="text" size="60"></td>
+            </tr>
+            <tr>
+                <th>Postal Code</th>
+                <td><input type="text" value="WG2 7LT" size="60"></td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>
+                    <select>
+                        <option value="1">Russian Federation</option>
+                        <option value="2">United States</option>
+                        <option value="3">Canada</option>
+                    </select>
+            </tr>
+            <tr>
+                <th>US Home Phone</th>
+                <td><input type="text" value="(234)234-2342" size="60"></td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td><input type="text" value="EmpID9.bmp" size="60"></td>
+            </tr>
+        </table>
+    </form>
+    <h3>Optional Info</h3><hr>
+    <form action="">
+        <table  cellspacing="0" cellpadding="10">
+            <tr>
+                <th width="140">Notes</th>
+                <td>
+                    <button><i class="fa-solid fa-bold"></i></button>
+                    <button><i class="fa-solid fa-italic"></i></button>
+                    <button><i class="fa-solid fa-underline"></i></button>
+                    <button><i class="fa-solid fa-strikethrough"></i></button>
+                    <button><i class="fa-solid fa-align-left"></i></button>
+                    <button><i class="fa-solid fa-align-center"></i></button>
+                    <button><i class="fa-solid fa-align-right"></i></button>
+                    <button><i class="fa-solid fa-align-justify"></i></button>
+                    <button><i class="fa-solid fa-subscript"></i></button>
+                    <button><i class="fa-solid fa-superscript"></i></button>
+                    <button><i class="fa-solid fa-undo"></i></button>
+                    <button><i class="fa-solid fa-redo"></i></button>
+                    <button><i class="fa-solid fa-list-ul"></i></button>
+                    <button><i class="fa-solid fa-list-ol"></i></button><br>
+                    <button><i class="fa-solid fa-link"></i></button>
+                    <button><i class="fa-solid fa-image"></i></button>
+                    <button><i class="fa-solid fa-floppy-disk"></i></button>
+                    <button><i class="fa-solid fa-times"></i></button>
+                    <br><textarea name="note" id="note" cols="56" rows="7">Anne has a BA degree in English form St. Lawrence College. She is fluent in Freanch and German.ZZZ</textarea></td>
+            </tr>
+            <tr>
+                <th>preferred Shift</th>
+                <td>
+                    <input type="checkbox" name="shift" id="regular"><label for="regular">Regular</label><br>
+                    <input type="checkbox" name="shift" id="gravy" checked><label for="gravy">Gravy Yard</label><br>
+                </td>
+            </tr>
+            <tr>
+                <th>Active?</th>
+                <td><input type="checkbox" checked></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>TIDAWO</td>
+            </tr>
+            <tr>
+                <th>Are you human?</th>
+                <td>Click to change</td><br>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="text" name="" id="" size="60"></td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+    <table>
+        <tr>
+            <td>
+                <button type="trai">&lt;</button>
+                <button type="phai">&gt;</button>
+            </td>
+    
+            <td>
+                <button type="submit">Submit</button>
+                <button type="reset">Cancel</button>
+            </td>
+        </tr>
+    </table>
+    <p>* required</p>
+</body>
+</html>
