@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nguyen Thi Ngat">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Buổi 4</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TLU</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Thông tin tuyển sinh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giáo viên</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ngành
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Công nghệ thông tin</a></li>
+                            <li><a class="dropdown-item" href="#">Kinh tế</a></li>
+                            <li><a class="dropdown-item" href="#">Tài nguyên môi trường</a></li>
+                            <li><a class="dropdown-item" href="#">Cơ khí</a></li>
+                            <li><hr></li>
+                            <li><a class="dropdown-item" href="#">Ngành khác</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center g-4">
+            <!-- Form thêm sinh viên -->
+            <div class="col-md-4">
+            <div class="bg-light p-3 rounded shadow">
+                <h4 class="mb-4 text-center">THÊM SINH VIÊN</h4>
+                <form action="">
+                    <div class="mb-3">
+                        <label for="msv" class="form-label">Mã sinh viên</label>
+                        <input type="text" name="msv" id="msv" class="form-control" required placeholder="Nhập mã sinh viên">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Họ và tên</label>
+                        <input type="text" name="fullname" id="fullname" class="form-control" required placeholder="Nhập họ tên">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" name="email" id="email" class="form-control" required placeholder="Nhập email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ngaysinh" class="form-label">Ngày sinh</label>
+                        <input type="date" name="ngaysinh" id="ngaysinh" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-block">Giới tính</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gioitinh" value="Nam" id="nam">
+                            <label class="form-check-label" for="nam">Nam</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gioitinh" value="Nu" id="nu">
+                            <label class="form-check-label" for="nu">Nữ</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gioitinh" value="Khac" id="khac">
+                            <label class="form-check-label" for="khac">Khác</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ghichu" class="form-label">Ghi chú</label>
+                        <textarea name="ghichu" id="ghichu" class="form-control" rows="3" placeholder="Nhập ghi chú nếu có..."></textarea>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Thêm sinh viên</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+            <!-- Danh sách sinh viên -->
+            <div class="col-md-8">
+                <div class="bg-light p-4 rounded shadow">
+                    <h4 class="mb-4 text-center" id="ds">DANH SÁCH SINH VIÊN</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover text-center align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Mã sinh viên</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Giới tính</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2251162086</td>
+                                    <td>Nguyễn Thị Ngát</td>
+                                    <td>nguyenthingat@gmail.com</td>
+                                    <td>2004-01-01</td>
+                                    <td>Nữ</td>
+                                    <td>
+                                        <a href="#" class="text-primary me-4"><i class="fas fa-pen-to-square icon-hover"></i></a> 
+                                        <a href="#"><i class="fas fa-trash icon-hover"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2251162085</td>
+                                    <td>Phạm Hiếu Ngân</td>
+                                    <td>phamhieungan@gmail.com</td>
+                                    <td>2004-02-01</td>
+                                    <td>Nữ</td>
+                                    <td>
+                                        <a href="#" class="text-primary me-4"><i class="fas fa-pen-to-square icon-hover"></i></a>
+                                        <a href="#"><i class="fas fa-trash icon-hover"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>2251162087</td>
+                                    <td>Ngô Thị Ngọc</td>
+                                    <td>ngothingoc@gmail.com</td>
+                                    <td>2004-05-01</td>
+                                    <td>Nữ</td>
+                                    <td>
+                                        <a href="#" class="text-primary me-4"><i class="fas fa-pen-to-square icon-hover"></i></a>
+                                        <a href="#"><i class="fas fa-trash icon-hover"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
