@@ -1,0 +1,23 @@
+.popup-form {
+    max-width: 400px;
+}
+.modal-body textarea {
+    resize: none;
+}
+.vien {
+    border: 1px solid #9a9797;
+}
+.padding {
+    padding: 10px 30px;
+}
+table td, table th {
+    vertical-align: middle !important;
+}
+table i {
+    cursor: pointer;
+}
+.header{
+    background-color: #30506f;
+    padding: 10px 20px;
+    color: #fff;
+}
