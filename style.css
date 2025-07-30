@@ -1,23 +1,50 @@
-.popup-form {
-    max-width: 400px;
-}
-.modal-body textarea {
-    resize: none;
-}
-.vien {
-    border: 1px solid #9a9797;
-}
-.padding {
-    padding: 10px 30px;
-}
-table td, table th {
-    vertical-align: middle !important;
-}
-table i {
-    cursor: pointer;
-}
-.header{
-    background-color: #30506f;
-    padding: 10px 20px;
-    color: #fff;
-}
+body {
+      font-family: Arial, sans-serif;
+    }
+
+    .table th, .table td {
+      vertical-align: middle;
+    }
+
+    .btn-add {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-add i {
+      margin-right: 5px;
+    }
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .form-control {
+      border: 1px solid #ccc;
+    }
+
+    .modal-footer .btn-success {
+      background-color: #28a745;
+      border: none;
+    }
+
+    .modal-footer .btn-secondary {
+      border: none;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 10px 0;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }

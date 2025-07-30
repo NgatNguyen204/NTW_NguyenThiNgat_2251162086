@@ -1,120 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Manage Employees</title>
-
-  <!-- Bootstrap 5 -->
+  <meta charset="UTF-8">
+  <title>Quản lý giao dịch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Custom Styles -->
-         <link rel="stylesheet" href="style.css">
-
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3 vien">
-    <a class="navbar-brand fw-bold" href="#">TLU</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Employees</a></li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2 vien" type="search" placeholder="Search" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-
   <!-- Header -->
-   <br>
-    <div class="d-flex justify-content-between align-items-center mb-3 padding header">
-        <h4>Manage <strong>Employees</strong></h4>
-        <div>
-            <button class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">
-            <i class="bi bi-plus-circle-fill"></i> Add New Employee
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">Trường Đại học Thủy Lợi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
-    </div>
 
-  <div class="container mt-4">
-    <!-- Alert -->
-    <div id="alertBox" class="alert alert-success d-none" role="alert">
-      Employee added successfully!
-    </div>
-    <!-- Table -->
-    <table id="employeeTable" class="table table-hover align-middle">
-      <thead class="table-light">
-        <tr>
-          <th><input type="checkbox"></th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Phone</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- JS renders here -->
-      </tbody>
-    </table>
-  </div>
-    <!-- Pagination (Optional Static) -->
-    <nav class="d-flex justify-content-between align-items-center padding" id="paginationNav">
-      <div><p class="mb-0">Showing 5 out of 25 entries</p></div>
-      <div>
-        <ul class="pagination mb-0">
-          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </div>
+            <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Quản lý sinh viên</a>
+                    </li>
+                </ul>
+                <form class="d-flex align-items-center">
+                    <input class="form-control me-2" type="search" placeholder="Nội dung tìm kiếm" aria-label="Search" style="width: 250px;">
+                    <button class="btn btn-outline-success" type="submit" style="width: 100px;">TÌM KIẾM</button>
+                </form>
+            </div>
+        </div>
     </nav>
+<!-- hàng trước bảng -->
+    <div class="container mt-4">
+      <div class="row align-items-center mb-3">
+        <!-- Cột trái: Nút -->
+        <div class="col-12 col-md-4 order-1 order-md-1 d-flex gap-2 justify-content-start mb-2 mb-md-0">
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTransactionModal">
+            <i class="bi bi-plus-circle-fill"></i> THÊM
+          </button>
 
-
-  <!-- Modal Add Employee -->
-  <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content popup-form">
-        <div class="modal-header">
-          <h5 class="modal-title">Add Employee</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#export">
+            <i class="bi bi-file-earmark-arrow-down"></i> Xuất ra file
+          </button>
         </div>
-        <div class="modal-body">
-          <form id="addEmployeeForm">
-            <div class="mb-2">
-              <label class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" />
-            </div>
-            <div class="mb-2">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" />
-            </div>
-            <div class="mb-2">
-              <label class="form-label">Address</label>
-              <textarea class="form-control" rows="2" id="address"></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Phone</label>
-              <input type="text" class="form-control" id="phone" />
-            </div>
-            <div class="d-flex justify-content-end">
-              <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-success">Add</button>
-            </div>
+        <!-- Cột giữa: Form tìm kiếm -->
+        <div class="col-12 col-md-4 order-3 order-md-2 mt-2 mt-md-0 d-flex justify-content-center">
+          <form class="d-flex w-100 justify-content-center" role="search">
+            <input class="form-control me-2" type="search" placeholder="Tìm kiếm giao dịch" aria-label="Search" style="max-width: 100%;">
+            <button class="btn btn-outline-success" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
           </form>
         </div>
+        <!-- Cột phải: Kết quả -->
+        <div class="col-12 col-md-4 order-2 order-md-3 d-flex justify-content-md-end justify-content-start gap-2 align-items-center mb-2 mb-md-0">
+          <strong>Kết quả</strong>
+          <div id="transactionCount" class="bg-secondary text-white px-3 py-1 rounded">5</div>
+        </div>
+      </div>
+<!-- Bảng quản lý giao dịch -->
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+          <thead class="table-dark">
+            <tr>
+              <th class="text-center"> <input type="checkbox" id="selectAllCheckbox" class="select-row" data-index="${index}" /></th>
+              <th>Hành động</th>
+              <th>ID</th>
+              <th class="text-start">Khách hàng</th>
+              <th class="text-start">Nhân viên</th>
+              <th>Số tiền</th>
+              <th>Ngày mua</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dữ liệu được thêm bằng JavaScript -->
+          </tbody>
+        </table>
+        <div>
+          <button class="btn btn-danger" id="btnDeleteSelected">
+            <i class="fas fa-times-circle"> </i> DELETE SELECTED RECORDS
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="text-center mt-4 fixed-bottom">
+    <p>TRƯỜNG ĐẠI HỌC THUỶ LỢI</p>
+    <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội - Điện thoại: (024) 38522201</p>
+    <p>Email: dhthuyloi@tlu.edu.vn - Website: www.tlu.edu.vn</p>
+  </footer>
+  <!-- Modal Thêm Giao Dịch -->
+  <div class="modal fade" id="addTransactionModal" tabindex="-1" aria-labelledby="addTransactionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" id="formAddTransaction">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addTransactionModalLabel">Thêm Giao Dịch</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="inputID" class="form-label">ID</label>
+            <input type="text" class="form-control" id="inputID" required />
+          </div>
+          <div class="mb-3">
+            <label for="inputKH" class="form-label">Khách hàng</label>
+            <input type="text" class="form-control" id="inputKH" required />
+          </div>
+          <div class="mb-3">
+            <label for="inputNV" class="form-label">Nhân viên</label>
+            <input type="text" class="form-control" id="inputNV" required />
+          </div>
+          <div class="mb-3">
+            <label for="inputSoTien" class="form-label">Số tiền</label>
+            <input type="number" class="form-control" id="inputSoTien" required />
+          </div>
+          <div class="mb-3">
+            <label for="inputNgay" class="form-label">Ngày mua</label>
+            <input type="datetime-local" class="form-control" id="inputNgay" required />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="submit" class="btn btn-primary">Thêm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Modal Xem Giao Dịch -->
+  <div class="modal fade" id="viewTransactionModal" tabindex="-1" aria-labelledby="viewTransactionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viewTransactionModalLabel">Thông Tin Giao Dịch</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>ID:</strong> <span id="viewID"></span></p>
+          <p><strong>Khách hàng:</strong> <span id="viewKH"></span></p>
+          <p><strong>Nhân viên:</strong> <span id="viewNV"></span></p>
+          <p><strong>Số tiền:</strong> <span id="viewSoTien"></span></p>
+          <p><strong>Ngày mua:</strong> <span id="viewNgay"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap & Scripts -->
+
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
   <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
