@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.btn-add {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-add i {
+  margin-right: 5px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+}
+
+.modal-footer .btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.modal-footer .btn-secondary {
+  border: none;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ---- GIẢI PHÁP CHO CỘT BỊ CO GIÃN KHI PHÂN TRANG (Cách chuyên nghiệp) ---- */
+
+/* Bước 1: Ra lệnh cho bảng tuân theo kích thước của tiêu đề */
+.table {
+  table-layout: fixed;
+  width: 100%; /* Đảm bảo bảng luôn chiếm đầy đủ chiều rộng */
+}
+
+/* Bước 2: Quy định kích thước cho các cột trong tiêu đề */
+.table th:nth-child(1) { width: 3%; }   /* Cột checkbox */
+.table th:nth-child(2) { width: 12%; }  /* Cột Hành động */
+.table th:nth-child(3) { width: 8%; }   /* Cột ID */
+.table th:nth-child(4) { width: 12%; }  /* Cột Khách hàng */
+.table th:nth-child(5) { width: 15%; }  /* Cột Nhân viên */
+.table th:nth-child(6) { width: 25%; }  /* Cột Số tiền */
+.table th:nth-child(7) { width: 20%; }  /* Cột Ngày mua */
+
+.toggle-status {
+    cursor: pointer;
+}
