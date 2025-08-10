@@ -1,0 +1,40 @@
+.popup-form {
+    max-width: 400px;
+}
+.modal-body textarea {
+    resize: none;
+}
+.vien {
+    border: 1px solid #9a9797;
+}
+.padding {
+    padding: 10px 30px;
+}
+table td, table th {
+    vertical-align: middle !important;
+}
+table i {
+    cursor: pointer;
+}
+.header{
+    background-color: #30506f;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%; /* Đảm bảo bảng luôn chiếm đầy đủ chiều rộng */
+}
+
+/* Bước 2: Quy định kích thước cho các cột trong tiêu đề */
+.table th:nth-child(1) { width: 5%; }   /* Cột checkbox */
+.table th:nth-child(2) { width: 15%; }  /* Cột Name */
+.table th:nth-child(3) { width: 20%; }   /* Cột Email */
+.table th:nth-child(4) { width: 20%; }  /* Cột Address */
+.table th:nth-child(5) { width: 10%; }  /* Phone */
+.table th:nth-child(6) { width: 15%; }  /* Actions */
+
+.form-control{
+    border: #1f1e1e 1px solid;
+}
